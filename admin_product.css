@@ -1,0 +1,314 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+/* .spec-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #000000;
+} */
+.spec-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #4c92dc; /* Green background */
+    color: white; /* White text */
+    font-size: 16px; /* Increase font size */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.spec-link:hover {
+    background-color: #137dee; /* Darker green on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    text-decoration: none;
+}
+
+.gridbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.grid {
+    background-color: #fff;
+    padding: 20px;
+    margin: 30px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 75%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+    
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form .form-group {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4c88ca;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #137dee;
+}
+
+.full_product_details {
+    width: 75%;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.table-container {
+    max-height: 70vh;
+    overflow-y: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    padding: 12px;
+    background-color: #343a40;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container img {
+    margin-bottom: 5px;
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.action-buttons a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: opacity 0.3s;
+}
+
+.action-buttons .edit-btn {
+    background-color: #4CAF50;
+}
+
+.action-buttons .delete-btn {
+    background-color: #f44336;
+}
+
+.action-buttons a:hover {
+    opacity: 0.8;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+/* Add this CSS to your admin_product.css file */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* Brand Management Styles */
+.spec-add {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.spec-add h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#brand-management {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#add-brand-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#add-brand-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+#add-brand-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#add-brand-form button:hover {
+    background-color: #0056b3;
+}
+
+#brand-list ul {
+    list-style: none;
+}
+
+#brand-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.brand-name {
+    flex-grow: 1;
+    margin-right: 10px;
+    color: #333;
+}
+
+.edit-brand-btn,
+.delete-brand-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-brand-btn {
+    background-color: #28a745;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.edit-brand-btn:hover {
+    background-color: #218838;
+}
+
+.delete-brand-btn {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.delete-brand-btn:hover {
+    background-color: #c82333;
+}

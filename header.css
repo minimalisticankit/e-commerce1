@@ -1,0 +1,279 @@
+/* Reset styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { 
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+button {
+  background: none;
+  border: none;
+}
+
+input { 
+  width: 100%; 
+}
+
+button { 
+  cursor: pointer; 
+}
+
+html {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.has-before,
+.has-after {
+  position: relative;
+  z-index: 1;
+}
+
+.has-before::before,
+.has-after::after {
+  content: "";
+  position: absolute;
+}
+
+/* Header styles */
+.header .input-wrapper,
+.header-action-btn:not(:first-child),
+.navbar { display: none; }
+
+.header {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.alert {
+  background-color: hsl(60, 68%, 85%);
+  color: black;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.header-top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 30px;
+}
+
+.alert { 
+  padding: 8px 0; 
+}
+
+.header .input-wrapper,
+.header-action-btn:not(:first-child),
+.navbar { display: block; }
+
+.nav-open-btn { display: none; }
+
+.header {
+  padding-bottom: 60px;
+  margin-bottom: 10px;
+}
+
+.header-top {
+  position: static;
+  padding: 24px 0;
+}
+
+.header-top.active,
+.header-top.header-hide { 
+  all: unset; 
+}
+
+.header-top .container { 
+  flex-wrap: wrap; 
+}
+
+.header .logo { 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.header-actions a {
+  display: grid;
+  place-items: center;
+}
+
+.header-action-btn { 
+  position: relative; 
+}
+
+.header-action-btn .btn-badge {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  background-color: black;
+  color: white;
+  font-size: 1.3rem;
+  min-width: 18px;
+  height: 18px;
+  line-height: 1.4;
+  border-radius: 20px;
+}
+
+.header-action-btn:last-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-action-btn ion-icon {
+  font-size: 24px;
+}
+
+.header-action-btn .btn-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.navbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 0;
+  z-index: 4;
+}
+
+.navbar .navbar-list {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+}
+
+.navbar .navbar-link {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar .navbar-link::after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transition: 0.25s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.navbar .navbar-link:hover::after,
+.navbar .navbar-link:focus::after {
+  transform: scaleX(1);
+}
+
+
+
+/* Modal */
+#orderFormModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#orderFormModal .modal-content {
+  position: absolute;
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #000000;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#orderFormModal .modal-content h2 {
+  text-align: center;
+}
+
+#orderFormModal .modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+#orderFormModal .modal-content input,
+#orderFormModal .modal-content select {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#orderFormModal .modal-content button {
+  width: calc(50% - 10px);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#orderFormModal .modal-content .cancel-btn {
+  background-color: #dc3545;
+  color: #fff;
+  float: right;
+}
+
+#orderFormModal .modal-content .cancel-btn:hover {
+  background-color: #c82333;
+}
+
+#orderFormModal .modal-content .submit-btn {
+  background-color: #28a745;
+  color: #fff;
+  float: left;
+}
+
+#orderFormModal .modal-content .submit-btn:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,152 @@
+/* index.css */
+
+body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.headerr {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    text-align: center; 
+}
+
+.headerr h1 {
+    margin: 0;
+    color: #333;
+}
+
+.shop-all-link {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.shop-all-link:hover {
+    color: #1a6fb3;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 220px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    width: 220px; /* Match the width of product-item */
+    height: 220px; /* Ensure the height is the same */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto; /* Scale down to fit container */
+    height: auto; /* Scale down to fit container */
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 1.1em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #e67e22;
+    margin: 10px 0;
+}
+
+.product-reviews {
+    font-size: 0.9em;
+    color: #777;
+    margin: 10px 0;
+}
+
+.product-quantity {
+    font-size: 1em;
+    color: #2ecc71;
+    margin: 10px 0;
+}
+
+/* Slide Styles */
+.main-i {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.content-i {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.content-i img {
+    width: 100%;
+    height: 500px; /* Fixed height for the images */
+    object-fit: cover; /* Ensures the image covers the container, cropping if necessary */
+}
+
+.center-i .left-i,
+.center-i .right-i {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.center-i .left-i {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.center-i .right-i {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}

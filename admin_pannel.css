@@ -1,0 +1,85 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.btn:hover{
+    opacity: .7;
+    color: #000;
+    background: rgb(58, 58, 58);
+}
+
+body {
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+
+}
+
+
+/* Admin Dashboard list */
+.banner {
+    height: 20vh;
+    width: 100%;
+    position: relative; /* Add relative positioning */
+    z-index: 0;
+}
+
+.banner .detail {
+    position: relative; /* Use relative positioning */
+    padding: 7rem 0;
+    text-align: center;
+    z-index: 1; /* Ensure content appears on top */
+}
+.banner .detail h1{
+    font-size: 5rem;
+    color:#000000;
+    text-transform: capitalize;
+}
+.banner  .detail p{
+    font-size: 18px;
+    line-height: 2;
+}
+.banner .detail a{
+    text-transform: uppercase;
+    color: #000;
+}
+.banner .detail span{
+    color: #fff;
+}
+.dashboard {
+    background: #fff;
+    padding: 3rem;
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+.box-container {
+    padding: 2% 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    column-gap: 5rem;
+}
+
+.box-container .box {
+    background: #fff;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+    padding: 2rem;
+    margin-top: 3.5rem;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.dashboard .box h3 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.dashboard .box p {
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: .5rem 0;
+}

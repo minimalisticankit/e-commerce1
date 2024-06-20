@@ -1,0 +1,179 @@
+/* Base styles for the body and form elements */
+body {
+   
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 50%;
+    background: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Styling for image containers for side-by-side display with specific widths */
+.images-table {
+    width: 100%;
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+
+.images-table th, .images-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: CENTER;
+}
+
+.images-table th {
+    background-color: #f4f4f4;
+}
+
+.image-actions {
+    display: flex;
+    justify-content: space-around; /* Evenly space the buttons */
+}
+
+.action-button {
+    background-color: #620000cf;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #ff0000;
+}
+
+.action-button input[type="file"] {
+    display: none;
+}
+
+
+
+/* .image-actions button, .image-actions label {
+    display: inline-block;
+    padding: 8px 15px;
+    color: white;
+    width: 80%;
+    text-align: center;
+    background-color: #636363;
+    border: none;
+   border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-actions button:hover, .image-actions label:hover {
+    background-color: #e20000;
+} */
+
+
+
+
+/* Input and button styling */
+input[type="file"] {
+    display: block;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Feedback message styling */
+.feedback {
+    text-align: center;
+    color: #000;
+    background-color: #00ff04;
+    border-color: #00ff51;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 40px);
+        padding: 10px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(1, 1fr); /* One column on small screens */
+    }
+
+    .form-actions input[type="submit"] {
+        width: 100%;
+    }
+}
+#popup-message {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    right: -10%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75); /* Slightly transparent black */
+    color: #fff; /* Bright white text */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(6, 47, 0, 0.2); /* Softer shadow */
+    border: 1px solid rgb(89, 255, 0); /* Subtle white border */
+    text-align: center;
+    width: 80%; /* Responsive width */
+    max-width: 600px; /* Maximum width */
+}

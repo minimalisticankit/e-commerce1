@@ -1,0 +1,171 @@
+
+body {
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    
+}
+
+.spec-add h2 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.spec-add {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.spec-add .manage-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.spec-add form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.spec-add input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    color: #333;
+}
+
+.spec-add input[type="text"]:focus {
+    border-color: #333;
+}
+
+.spec-add button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4c88ca;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.spec-add button:hover {
+    background-color: #137dee;
+}
+
+.spec-add #brand-list, 
+.spec-add #display-list, 
+.spec-add #graphic-list, 
+.spec-add #processor-list, 
+.spec-add #ram-list, 
+.spec-add #storage-list {
+    margin-top: 20px;
+}
+
+.spec-add ul {
+    list-style: none;
+    padding: 0;
+}
+
+.spec-add li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.spec-add .brand-name, 
+.spec-add .display-name, 
+.spec-add .graphic-name, 
+.spec-add .processor-name, 
+.spec-add .ram-name, 
+.spec-add .storage-name {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.spec-add .edit-brand-btn, 
+.spec-add .edit-display-btn, 
+.spec-add .edit-graphic-btn, 
+.spec-add .edit-processor-btn, 
+.spec-add .edit-ram-btn, 
+.spec-add .edit-storage-btn,
+.spec-add .delete-brand-btn, 
+.spec-add .delete-display-btn, 
+.spec-add .delete-graphic-btn, 
+.spec-add .delete-processor-btn, 
+.spec-add .delete-ram-btn, 
+.spec-add .delete-storage-btn {
+    margin-left: 0;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    width: 100%;
+}
+
+.spec-add .edit-brand-btn, 
+.spec-add .edit-display-btn, 
+.spec-add .edit-graphic-btn, 
+.spec-add .edit-processor-btn, 
+.spec-add .edit-ram-btn, 
+.spec-add .edit-storage-btn {
+    background-color: #4c88ca;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.spec-add .edit-brand-btn:hover, 
+.spec-add .edit-display-btn:hover, 
+.spec-add .edit-graphic-btn:hover, 
+.spec-add .edit-processor-btn:hover, 
+.spec-add .edit-ram-btn:hover, 
+.spec-add .edit-storage-btn:hover {
+    background-color: #137dee;
+}
+
+.spec-add .delete-brand-btn, 
+.spec-add .delete-display-btn, 
+.spec-add .delete-graphic-btn, 
+.spec-add .delete-processor-btn, 
+.spec-add .delete-ram-btn, 
+.spec-add .delete-storage-btn {
+    background-color: #dc3546dd;
+    color: #fff;
+}
+
+.spec-add .delete-brand-btn:hover, 
+.spec-add .delete-display-btn:hover, 
+.spec-add .delete-graphic-btn:hover, 
+.spec-add .delete-processor-btn:hover, 
+.spec-add .delete-ram-btn:hover, 
+.spec-add .delete-storage-btn:hover {
+    background-color: #c82333c8;
+}
+

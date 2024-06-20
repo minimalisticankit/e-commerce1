@@ -1,0 +1,291 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 90%;
+    margin: 20px auto;
+    justify-content: space-between;
+}
+
+.filters {
+    flex: 2;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    height: 80%;
+}
+
+.filters h2 {
+    margin-top: 0;
+    font-size: 1.6em;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.filters h3 {
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+.filters label {
+    font-size: 1.1em;
+    margin: 5px 0;
+    display: block;
+    color: #555;
+}
+
+.filters input[type="number"], .filters input[type="radio"], .filters input[type="checkbox"], .filters input[type="submit"], .filters .clear-filters {
+    margin: 10px 0;
+}
+
+.price-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.price-inputs input {
+    width: 45%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.price-range-slider {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.filters .filter-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.clear-filters {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: auto;
+    font-size: 0.9em;
+}
+
+.clear-filters:hover {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.clear-filters:active {
+    color: #004085;
+}
+
+.clear-filters:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5em;
+}
+
+.filters input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+}
+
+.filters input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.filters input[type="radio"], .filters input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    vertical-align: middle;
+}
+
+.product-grid-wrapper {
+    flex: 8;
+    margin-left: 30px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 10px;
+    height: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.product-name {
+    font-size: 1.2em;
+    margin: 10px 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.product-quantity {
+    color: #888;
+    text-align: center;
+}
+
+.product-price {
+    font-size: 1.1em;
+    color: #e74c3c;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Additional CSS for filter sections */
+.filters input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.brand-filter, .processor-filter, .ram-filter, .storage-filter, .display-filter, .graphic-filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.brand-filter input[type="checkbox"], .processor-filter input[type="checkbox"], .ram-filter input[type="checkbox"], 
+.storage-filter input[type="checkbox"], .display-filter input[type="checkbox"], .graphic-filter input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.brand-filter input[type="checkbox"]:checked, .processor-filter input[type="checkbox"]:checked, 
+.ram-filter input[type="checkbox"]:checked, .storage-filter input[type="checkbox"]:checked, 
+.display-filter input[type="checkbox"]:checked, .graphic-filter input[type="checkbox"]:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.brand-filter input[type="checkbox"]:checked::after, .processor-filter input[type="checkbox"]:checked::after, 
+.ram-filter input[type="checkbox"]:checked::after, .storage-filter input[type="checkbox"]:checked::after, 
+.display-filter input[type="checkbox"]:checked::after, .graphic-filter input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    top: 2px;
+    left: 6px;
+}
+
+.brand-filter label, .processor-filter label, .ram-filter label, .storage-filter label, 
+.display-filter label, .graphic-filter label {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.brand-filter input[type="checkbox"]:hover, .processor-filter input[type="checkbox"]:hover, 
+.ram-filter input[type="checkbox"]:hover, .storage-filter input[type="checkbox"]:hover, 
+.display-filter input[type="checkbox"]:hover, .graphic-filter input[type="checkbox"]:hover, 
+.brand-filter label:hover, .processor-filter label:hover, .ram-filter label:hover, 
+.storage-filter label:hover, .display-filter label:hover, .graphic-filter label:hover {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+/* Additional styles for show more functionality */
+.show-more {
+    display: block;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: left;
+    padding: 0;
+}
+
+.show-more:hover {
+    color: #0056b3;
+}
+
+.show-more:active {
+    color: #004085;
+}

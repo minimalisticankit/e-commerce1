@@ -1,0 +1,91 @@
+/* Global Styles */
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #343a40;
+}
+
+/* User Management Container */
+.user-management-container {
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.user-management-container form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.user-management-container form input[type="text"],
+.user-management-container form input[type="email"],
+.user-management-container form input[type="password"],
+.user-management-container form select {
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.user-management-container form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-management-container form button:hover {
+    background-color: #0056b3;
+}
+
+/* Table Styles */
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.user-table th,
+.user-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.user-table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.user-table tr:hover {
+    background-color: #e9ecef;
+}
+
+.user-table a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.user-table a:hover {
+    text-decoration: underline;
+}
