@@ -14,8 +14,8 @@
             <nav class="navbar">
                 <a href="admin_pannel.php">home</a>
                 <a href="admin_product.php">product</a>
-                
-                <a href="admin_user_management.php">users / order</a>
+                <a href="admin_order.php">order</a>
+                <a href="admin_user_management.php">users</a>
              
          
             </nav>

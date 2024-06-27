@@ -4,7 +4,10 @@ include 'connection.php';
 
 // Fetch all users from the database
 function fetchUsers($conn) {
-    $sql = "SELECT user.id, user.name, user.email, user.user_type, COUNT(orders.id) AS pending_orders_count FROM user LEFT JOIN orders ON user.id = orders.user_id AND orders.payment_status = 'pending' GROUP BY user.id, user.name, user.email, user.user_type; ";
+    $sql = "SELECT user.id, user.name, user.email, user.user_type, COUNT(orders.id) AS pending_orders_count 
+            FROM user 
+            LEFT JOIN orders ON user.id = orders.user_id AND orders.payment_status = 'pending' 
+            GROUP BY user.id, user.name, user.email, user.user_type";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -56,7 +59,11 @@ if (isset($_GET['delete_user'])) {
 $search_results = [];
 if (isset($_POST['search_user'])) {
     $search_query = '%' . $_POST['search_query'] . '%';
-    $sql = "SELECT * FROM user WHERE name LIKE ? OR email LIKE ?";
+    $sql = "SELECT user.id, user.name, user.email, user.user_type, COUNT(orders.id) AS pending_orders_count 
+            FROM user 
+            LEFT JOIN orders ON user.id = orders.user_id AND orders.payment_status = 'pending' 
+            WHERE user.name LIKE ? OR user.email LIKE ? 
+            GROUP BY user.id, user.name, user.email, user.user_type";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $search_query, $search_query);
     $stmt->execute();
@@ -111,11 +118,11 @@ $users = fetchUsers($conn);
                     <td><?php echo htmlspecialchars($user['name']); ?></td>
                     <td><?php echo htmlspecialchars($user['email']); ?></td>
                     <td><?php echo htmlspecialchars($user['user_type']); ?></td>
-                    <td><?=$user['pending_orders_count']; ?></td>
+                    <td><?php echo htmlspecialchars($user['pending_orders_count']); ?></td>
                     <td>
                         <a href="admin_user_management.php?delete_user=<?php echo htmlspecialchars($user['id']); ?>" onclick="return confirm('Are you sure?')">Delete</a>
                         <a href="edit_user.php?id=<?php echo htmlspecialchars($user['id']); ?>">Edit</a>
-                        <a href="admin_manage_orders.php?user_id=<?php echo htmlspecialchars($user['id']); ?>">Manage Orders</a>
+                        
                     </td>
                 </tr>
                 <?php endforeach; ?>
