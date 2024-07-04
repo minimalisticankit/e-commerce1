@@ -52,7 +52,7 @@ body {
 
 .cart-table th,
 .cart-table td {
-    padding: 10px;
+    padding: 7px;
     text-align: center;
 }
 
@@ -71,15 +71,15 @@ body {
 
 /* Images */
 .cart-table img {
-    max-width: 100px;
+    max-width: 90px;
     height: auto;
     border-radius: 5px;
 }
 
 /* Quantity input */
 .quantity-input {
-    width: 60px;
-    padding: 5px;
+    width: 50px;
+    padding: 1px;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -101,36 +101,9 @@ body {
     background-color: #ff4c4c;
     color: white;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .cart-table thead {
-        display: none;
-    }
-
-    .cart-table tbody tr {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .cart-table td {
-        display: block;
-        text-align: right;
-        padding: 10px 5px;
-        position: relative;
-    }
-
-    .cart-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
-    }
-
-    .quantity-input {
-        width: 100%;
-    }
+.order-now-btn {
+    
+    background-color: #0063cc;
+    color: white;
 }
+

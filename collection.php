@@ -14,6 +14,7 @@ $selected_rams = isset($_GET['rams']) ? $_GET['rams'] : [];
 $selected_storages = isset($_GET['storages']) ? $_GET['storages'] : [];
 $selected_displays = isset($_GET['displays']) ? $_GET['displays'] : [];
 $selected_graphics = isset($_GET['graphics']) ? $_GET['graphics'] : [];
+$search_query = isset($_GET['search_query']) ? $_GET['search_query'] : '';
 
 function fetchOptions($conn, $table, $product_column, $order_by_numeric = false) {
     $query = "SELECT $table.*, COUNT(products.id) as product_count 
@@ -66,6 +67,12 @@ if ($max_price < 1000000) {
     $types .= 'i';
 }
 
+if (!empty($search_query)) {
+    $query .= " AND products.name LIKE ?";
+    $params[] = '%' . $search_query . '%';
+    $types .= 's';
+}
+
 function addFilterClause(&$query, &$params, &$types, $selected_filters, $column) {
     if (!empty($selected_filters)) {
         $placeholders = implode(',', array_fill(0, count($selected_filters), '?'));
@@ -100,7 +107,6 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <title>All Products</title>
     <link rel="stylesheet" href="collection.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js" defer></script>
     <script src="scripts.js" defer></script>
 </head>
 <body>
@@ -157,6 +163,11 @@ $result = $stmt->get_result();
     </div>
 
     <div class="product-grid-wrapper">
+        <form method="GET" action="collection.php" class="search-form">
+            <input type="text" name="search_query" placeholder="Search products..." value="<?php echo htmlspecialchars($search_query); ?>">
+            
+        </form>
+
         <div class="product-grid">
             <?php
             if ($result->num_rows > 0) {
@@ -189,6 +200,6 @@ $result = $stmt->get_result();
         </div>
     </div>
 </div>
-
+<?php include 'footer.php';?>
 </body>
 </html>

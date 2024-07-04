@@ -11,7 +11,7 @@ if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
 $product_ids = array_map('intval', array_keys($_SESSION['cart']));
 $ids = implode(',', $product_ids);
 
-$query = "SELECT cart.quantity, products.name, products.price, products.image, products.id 
+$query = "SELECT cart.quantity, products.name, products.price, products.image, products.id, products.quantity as available_quantity
           FROM cart 
           INNER JOIN products ON cart.pid = products.id 
           WHERE cart.user_id = ? AND products.id IN ($ids)";
@@ -25,7 +25,6 @@ $products = [];
 while ($row = $result->fetch_assoc()) {
     $products[] = $row;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,21 +52,24 @@ while ($row = $result->fetch_assoc()) {
                     <tbody>
                         <?php foreach ($products as $product): 
                             $first_image = explode(',', $product['image'])[0];
-                            $available_stock = isset($product['quantity']) ? $product['quantity'] : 0;
                         ?>
                         <tr data-product-id="<?php echo $product['id']; ?>">
                             <td><img src="img/<?php echo htmlspecialchars($first_image); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>"></td>
-                            <td><a href='product_details.php?id=<?php echo htmlspecialchars($product['id']); ?>' class='product-link'><?php echo htmlspecialchars($product['name']); ?></a></td>
                             <td>
-                                <input type="number" class="quantity-input" value="<?php echo htmlspecialchars($available_stock); ?>" min="1">
+                                <a href='product_details.php?id=<?php echo htmlspecialchars($product['id']); ?>' class='product-link'>
+                                    <?php echo htmlspecialchars($product['name']); ?> (<?php echo $product['available_quantity']; ?> available)
+                                </a>
+                            </td>
+                            <td>
+                                <input type="number" class="quantity-input" value="<?php echo htmlspecialchars($product['quantity']); ?>" min="1" max="<?php echo $product['available_quantity']; ?>">
                             </td>
                             <td>Rs. <?php echo htmlspecialchars($product['price']); ?></td>
                             <td>
                                 <button class="cart-btn remove-btn">Remove</button>
-                                <!-- <button class="cart-btn add-to-cart-btn" onclick="addToCart(<?php echo $product['id']; ?>)">Add to Cart</button> -->
                                 <button class="cart-btn order-now-btn" onclick="showOrderForm(<?php echo $product['id']; ?>, <?php echo $product['price']; ?>)">Order Now</button>
                             </td>
                         </tr>
+                        
                         <?php endforeach; ?>
                     </tbody>
                 </table>
@@ -106,7 +108,13 @@ while ($row = $result->fetch_assoc()) {
     document.querySelectorAll('.quantity-input').forEach(input => {
         input.addEventListener('change', function () {
             const productId = this.closest('tr').dataset.productId;
-            const quantity = this.value;
+            let quantity = parseInt(this.value);
+            const maxQuantity = parseInt(this.max);
+
+            if (quantity > maxQuantity) {
+                quantity = maxQuantity;
+                this.value = maxQuantity;
+            }
 
             fetch('update_cart.php', {
                 method: 'POST',
@@ -122,7 +130,7 @@ while ($row = $result->fetch_assoc()) {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    showModal('Quantity updated successfully');
+                    
                 } else {
                     showModal('Error updating quantity');
                 }
@@ -157,30 +165,6 @@ while ($row = $result->fetch_assoc()) {
 
     function showModal(message) {
         alert(message); // Simple alert for demonstration, can be replaced with a modal.
-    }
-
-    function addToCart(productId) {
-        const row = document.querySelector(`tr[data-product-id="${productId}"]`);
-        const quantity = row.querySelector('.quantity-input').value;
-        fetch('add_to_cart.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ product_id: productId, quantity: quantity }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                alert('Product added to cart!');
-            } else {
-                alert('Failed to add product to cart: ' + data.message);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred while adding the product to the cart.');
-        });
     }
 
     function showOrderForm(productId, price) {

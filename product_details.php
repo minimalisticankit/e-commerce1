@@ -1,8 +1,6 @@
 <?php
 session_start();
 include 'connection.php';
-include 'header.php';
-
 // Fetch product details
 $product_id = $_GET['id'];
 $query = "
@@ -46,7 +44,7 @@ $images = explode(',', $product['image']);
     <link rel="stylesheet" type="text/css" href="product_details.css">
 </head>
 <body>
-
+<?php include 'header.php';?>
     <div class="container-i">
         <div class="image-gallery">
             <div class="thumbnails">
@@ -237,5 +235,6 @@ $images = explode(',', $product['image']);
         });
     }
     </script>
+    <?php include 'footer.php';?>
 </body>
 </html>

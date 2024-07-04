@@ -111,7 +111,8 @@ if ($result->num_rows > 0) {
 <div class="product-grid">
 <div class="headerr">
     <h1>Products Under 1 Lakh</h1>
-    <a href="collection.php?price_filter=under100000" class="shop-all-link">Shop All Under 20,000 →</a>
+    <a href="collection.php?price_filter=under100000" class="shop-all-link">Shop All  Products →</a>
+
 </div>
 <?php
 // Query to fetch products under Rs. 20,000
@@ -145,7 +146,9 @@ if ($result_under_100000->num_rows > 0) {
     echo "<p>No products found under 100k</p>";
 }
 ?>
+
 </div> 
 </div>
+<?php include 'footer.php';?>
 </body>
 </html>

@@ -30,11 +30,7 @@ include 'connection.php';
         <div class="header-top" data-header>
             <div class="container">
 
-                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-                    <span class="line line-1"></span>
-                    <span class="line line-2"></span>
-                    <span class="line line-3"></span>
-                </button>
+              
 
                 <a href="index.php" class="logo">
                     <h1>TecHub</h1>
@@ -49,14 +45,16 @@ include 'connection.php';
                     </a>
                 </div>
 
-                <nav class="navbar">
+                <div class="navbar">
                     <ul class="navbar-list">
                         <li><a href="index.php" class="navbar-link has-after">Home</a></li>
                         <li><a href="collection.php" class="navbar-link has-after">Collection</a></li>
+                        <li><a href="user.php" class="navbar-link has-after">My Order</a></li>
                         
-                        <li><a href="#About Us" class="navbar-link has-after">About Us</a></li>
+                      
                     </ul>
-                </nav>
+                    
+                </div>
 
             </div>
         </div>

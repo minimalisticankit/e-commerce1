@@ -38,7 +38,7 @@ button:hover {
 .main-container {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1830px;
     margin: 20px auto;
     gap: 20px;
 }
