@@ -29,20 +29,7 @@ if (isset($_POST['add_user'])) {
     exit();
 }
 
-// Update user details
-if (isset($_POST['edit_user'])) {
-    $id = $_POST['user_id'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $user_type = $_POST['user_type'];
 
-    $sql = "UPDATE user SET name=?, email=?, user_type=? WHERE id=?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssi", $name, $email, $user_type, $id);
-    $stmt->execute();
-    header("Location: admin_user_management.php");
-    exit();
-}
 
 // Delete a user from the database
 if (isset($_GET['delete_user'])) {
@@ -121,7 +108,7 @@ $users = fetchUsers($conn);
                     <td><?php echo htmlspecialchars($user['pending_orders_count']); ?></td>
                     <td>
                         <a href="admin_user_management.php?delete_user=<?php echo htmlspecialchars($user['id']); ?>" onclick="return confirm('Are you sure?')">Delete</a>
-                        <a href="edit_user.php?id=<?php echo htmlspecialchars($user['id']); ?>">Edit</a>
+                      
                         
                     </td>
                 </tr>
